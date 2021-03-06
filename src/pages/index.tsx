@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, StrictMode } from 'react';
 import './index.less';
 import TestHook from './components/TestHook';
+import TestContext from './components/TestContext';
 
 const root = document.getElementById('root-slave');
 root && (root.style.width = `${window.innerWidth}px`);
@@ -19,10 +20,11 @@ export default () => {
     };
   }, []);
   return (
-    <>
-      <TestHook num={num}>
+    <StrictMode>
+      {/* <TestHook num={num}>
         <p>shhasdha</p>
-      </TestHook>
-    </>
+      </TestHook> */}
+      <TestContext></TestContext>
+    </StrictMode>
   );
 };
